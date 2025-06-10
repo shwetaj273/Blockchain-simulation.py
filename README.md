@@ -14,3 +14,10 @@ class Block:
  block_string = f"{self.index}{self.prior_hash}{self.timestamp}{self.data}".encode()
         # Return the hash of this string using SHA-256
         return hashlib.sha256(block_string).hexdigest()
+class ErnestoBlockChain:
+    def __init__(self):
+        self.chain = [self.create_genesis_block()]  # Initialize the chain with the genesis block
+    
+    def create_genesis_block(self):
+        # Create the first block in the blockchain with fixed parameters
+        return Block(0, '04/3/1977', 'BlockchainTrainingAlliance.com', '0')
