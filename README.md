@@ -21,3 +21,5 @@ class ErnestoBlockChain:
     def create_genesis_block(self):
         # Create the first block in the blockchain with fixed parameters
         return Block(0, '04/3/1977', 'BlockchainTrainingAlliance.com', '0')
+        def get_last_block(self):
+        return self.chain[-1] 
