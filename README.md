@@ -11,3 +11,6 @@ class Block:
     
     def create_hash(self):
         pass  #
+ block_string = f"{self.index}{self.prior_hash}{self.timestamp}{self.data}".encode()
+        # Return the hash of this string using SHA-256
+        return hashlib.sha256(block_string).hexdigest()
