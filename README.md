@@ -23,3 +23,7 @@ class ErnestoBlockChain:
         return Block(0, '04/3/1977', 'BlockchainTrainingAlliance.com', '0')
         def get_last_block(self):
         return self.chain[-1] 
+        def add_block(self, new_block):
+        new_block.prior_hash = self.get_last_block().hash
+        new_block.hash = new_block.create_hash()
+        self.chain.append(new_block)
